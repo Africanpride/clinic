@@ -14,9 +14,14 @@
 
             <!-- Name -->
             <div>
-                <x-input-label for="name" :value="__('Name')" />
+                <x-input-label for="firstName" :value="__('First Name')" />
 
-                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-text-input id="firstName" class="block mt-1 w-full" type="text" name="firstName" :value="old('firstName')" required autofocus />
+            </div>
+            <div>
+                <x-input-label for="lastName" :value="__('Last Name')" />
+
+                <x-text-input id="lastName" class="block mt-1 w-full" type="text" name="lastName" :value="old('lastName')" required autofocus />
             </div>
 
             <!-- Email Address -->
@@ -45,14 +50,18 @@
                                 name="password_confirmation" required />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+            <div class="flex flex-col items-center justify-end mt-4 gap-2">
 
-                <x-primary-button class="ml-4">
+                <x-primary-button class=" w-full  ">
                     {{ __('Register') }}
                 </x-primary-button>
+
+                @if (Route::has('login'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900"
+                        href="{{ route('login') }}">
+                        {{ __('Login Rather?') }}
+                    </a>
+                @endif
             </div>
         </form>
     </x-auth-card>

@@ -3,54 +3,7 @@
 <body tabindex="-1">
     <div class="bg-base-100 drawer drawer-mobile"><input id="drawer" type="checkbox" class="drawer-toggle">
         <div class="drawer-content" style="scroll-behavior: smooth; scroll-padding-top: 5rem;">
-            <div
-                class="
-      sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100
-      bg-base-100 text-base-content shadow-sm
-      ">
-                <nav class="navbar w-full">
-                    <div class="flex flex-1 md:gap-1 lg:gap-2"><span
-                            class="tooltip tooltip-bottom before:text-xs before:content-[attr(data-tip)]"
-                            data-tip="Menu"><label for="drawer"
-                                class="btn btn-square btn-ghost drawer-button lg:hidden"><svg width="20"
-                                    height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 6h16M4 12h16M4 18h16"></path>
-                                </svg></label></span>
-                        <div class="flex items-center gap-2 lg:hidden"><a href="/" aria-current="page"
-                                aria-label="Homepage" class="flex-0 btn btn-ghost px-2 ">
-                                <div
-                                    class="font-title text-primary inline-flex text-lg transition-all duration-200 md:text-3xl">
-                                    <span class="lowercase text-primary">{{ config('app.name') }}</span>
-                                </div>
-                            </a> <a href="/docs/changelog" class="link link-hover font-mono text-xs text-opacity-50 ">
-                                <div data-tip="Changelog" class="tooltip tooltip-bottom">v1.0</div>
-                            </a></div>
-
-                    </div>
-
-                    <div class="flex-0 flex items-center gap-2">
-
-
-{{ Auth::user()->firstName ?? 'Welcome!' }}
-
-                        <div class="dropdown dropdown-end"><label tabindex="0"
-                                class="btn btn-ghost btn-circle avatar">
-                                <div class="w-10 rounded-full"><img src="https://placeimg.com/80/80/people"></div>
-                            </label>
-                            <ul tabindex="0"
-                                class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                                <li><a class="justify-between">Profile
-                                        <span class="badge">New</span></a></li>
-                                <li><a>Settings</a></li>
-                                <li><a>Logout</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </nav>
-            </div>
+@include('layouts.topbar')
             <div class="p-6 pb-16">
                 <div class="flex flex-col-reverse justify-between gap-6 xl:flex-row">
                     <div class="prose w-full flex-grow">
