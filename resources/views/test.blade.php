@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="light" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html data-theme="night" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -817,36 +817,9 @@
         </div>
         <div class="drawer-side" style="scroll-behavior: smooth; scroll-padding-top: 5rem;"><label for="drawer"
                 class="drawer-overlay"></label>
-            <aside class="bg-base-200 w-80">
-                <div
-                    class="z-20 bg-base-200 bg-opacity-90 backdrop-blur sticky top-0 items-center gap-2 px-4 py-2 hidden lg:flex ">
-                    <a href="/" aria-current="page" aria-label="Homepage" class="flex-0 btn btn-ghost px-2">
-                        <div
-                            class="font-title text-primary inline-flex text-lg transition-all duration-200 md:text-3xl">
-                            <span class="lowercase">{{ config('app.name') }}</span> <span
-                                class="text-base-content uppercase">- UI</span>
-                        </div>
-                    </a> <a href="/docs/changelog" class="link link-hover font-mono text-xs text-opacity-50">
-                        <div data-tip="Changelog" class="tooltip tooltip-bottom">{{ config('app.version') }}</div>
-                    </a>
-                </div>
-                <div class="h-4"></div>
-                <ul class="menu menu-compact flex flex-col p-0 px-4">
-                    <li>
-                        <a href="{{ url('/dashboard') }}" id="" class="flex gap-4   ">
-                            <span class="flex-none">
-                                <x-heroicon-o-building-office-2 class="w-6 h-6 text-current" />
-                            </span>
-                            <span class="flex-1">Dashboard</span>
-                        </a>
-                    </li>
-                </ul>
 
-                <ul class="menu menu-compact flex flex-col p-0 px-4"> </ul>
-                <div
-                    class="from-base-200 pointer-events-none sticky bottom-0 flex h-20 bg-gradient-to-t to-transparent">
-                </div>
-            </aside>
+@include('layouts.navigation')
+
         </div>
     </div> <input type="checkbox" id="my-modal" class="modal-toggle" aria-label="Open or close modal">
     <div class="modal">
