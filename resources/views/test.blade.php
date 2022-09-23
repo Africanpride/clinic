@@ -42,31 +42,7 @@
                             </a> <a href="/docs/changelog" class="link link-hover font-mono text-xs text-opacity-50 ">
                                 <div data-tip="Changelog" class="tooltip tooltip-bottom">v1.0</div>
                             </a></div>
-                        <div class="hidden w-full max-w-sm lg:flex"><label class="searchbox relative mx-3 w-full"><svg
-                                    class="text-base-content pointer-events-none absolute z-10 my-3 ml-2 stroke-current opacity-60 "
-                                    width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                </svg>
-                                <div data-svelte-typeahead="" role="combobox" aria-haspopup="listbox"
-                                    aria-owns="typeahead-0.twnjesour2-listbox" aria-expanded="false"
-                                    id="typeahead-0.twnjesour2-typeahead" class="svelte-6c74g2">
-                                    <form data-svelte-search=""><label id="typeahead-0.twnjesour2-label"
-                                            for="typeahead-0.twnjesour2" class="svelte-wqugyy">Search</label> <input
-                                            name="search" type="search" placeholder="Search…" autocomplete="off"
-                                            spellcheck="false" id="typeahead-0.twnjesour2" aria-autocomplete="list"
-                                            aria-controls="typeahead-0.twnjesour2-listbox"
-                                            aria-labelledby="typeahead-0.twnjesour2-label" class="svelte-wqugyy">
-                                    </form>
-                                    <ul role="listbox" aria-labelledby="typeahead-0.twnjesour2-label"
-                                        id="typeahead-0.twnjesour2-listbox" class="svelte-6c74g2 svelte-typeahead-list">
-                                    </ul>
-                                </div>
-                                <div class="pointer-events-none absolute right-8 top-2 gap-1 opacity-50 hidden lg:flex">
-                                    <kbd class="kbd kbd-sm">ctrl</kbd> <kbd class="kbd kbd-sm">K</kbd>
-                                </div>
-                            </label></div>
+
                     </div>
 
                     <div class="flex-0">
@@ -857,14 +833,9 @@
                 <div class="h-4"></div>
                 <ul class="menu menu-compact flex flex-col p-0 px-4">
                     <li>
-                        <a href="{{ url('/dashboard') }}" id="" class="flex gap-4   "><span
-                                class="flex-none">
-                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" class="w-6 h-6 stroke-current">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20">
-                                    </path>
-                                </svg>
+                        <a href="{{ url('/dashboard') }}" id="" class="flex gap-4   ">
+                            <span class="flex-none">
+                                <x-heroicon-o-building-office-2 class="w-6 h-6 text-current" />
                             </span>
                             <span class="flex-1">Dashboard</span>
                         </a>
