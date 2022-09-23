@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="business" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html data-theme="light" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -28,8 +28,8 @@
                             class="tooltip tooltip-bottom before:text-xs before:content-[attr(data-tip)]"
                             data-tip="Menu"><label for="drawer"
                                 class="btn btn-square btn-ghost drawer-button lg:hidden"><svg width="20"
-                                    height="20" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6">
+                                    height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 6h16M4 12h16M4 18h16"></path>
                                 </svg></label></span>
@@ -37,10 +37,10 @@
                                 aria-label="Homepage" class="flex-0 btn btn-ghost px-2 ">
                                 <div
                                     class="font-title text-primary inline-flex text-lg transition-all duration-200 md:text-3xl">
-                                    <span class="lowercase text-primary">daisy</span> <span
-                                        class="uppercase text-base-content">UI</span></div>
+                                    <span class="lowercase text-primary">{{ config('app.name') }}</span>
+                                </div>
                             </a> <a href="/docs/changelog" class="link link-hover font-mono text-xs text-opacity-50 ">
-                                <div data-tip="Changelog" class="tooltip tooltip-bottom">2.31.0</div>
+                                <div data-tip="Changelog" class="tooltip tooltip-bottom">v1.0</div>
                             </a></div>
                         <div class="hidden w-full max-w-sm lg:flex"><label class="searchbox relative mx-3 w-full"><svg
                                     class="text-base-content pointer-events-none absolute z-10 my-3 ml-2 stroke-current opacity-60 "
@@ -60,16 +60,17 @@
                                             aria-labelledby="typeahead-0.twnjesour2-label" class="svelte-wqugyy">
                                     </form>
                                     <ul role="listbox" aria-labelledby="typeahead-0.twnjesour2-label"
-                                        id="typeahead-0.twnjesour2-listbox"
-                                        class="svelte-6c74g2 svelte-typeahead-list"> </ul>
+                                        id="typeahead-0.twnjesour2-listbox" class="svelte-6c74g2 svelte-typeahead-list">
+                                    </ul>
                                 </div>
-                                <div
-                                    class="pointer-events-none absolute right-8 top-2 gap-1 opacity-50 hidden lg:flex">
-                                    <kbd class="kbd kbd-sm">ctrl</kbd> <kbd class="kbd kbd-sm">K</kbd></div>
+                                <div class="pointer-events-none absolute right-8 top-2 gap-1 opacity-50 hidden lg:flex">
+                                    <kbd class="kbd kbd-sm">ctrl</kbd> <kbd class="kbd kbd-sm">K</kbd>
+                                </div>
                             </label></div>
                     </div>
+
                     <div class="flex-0">
-                        <div class="items-center flex-none hidden "><a sveltekit:prefetch="" href="/components"
+                        <div class="items-center flex-none hidden "><a href="/components"
                                 class="btn btn-ghost drawer-button normal-case"><svg width="20" height="20"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     class="inline-block h-6 w-6 fill-current md:mr-2">
@@ -703,313 +704,21 @@
             <div class="p-6 pb-16">
                 <div class="flex flex-col-reverse justify-between gap-6 xl:flex-row">
                     <div class="prose w-full max-w-4xl flex-grow">
-                        <h1>Hero</h1>
-                        <p>Hero is a component for displaying a large box or image with a title and description.</p>
-                        <div class="not-prose mt-6 mb-10 overflow-x-auto">
-                            <table class="table-compact table w-full">
-                                <thead>
-                                    <tr>
-                                        <th class="flex items-center gap-2 normal-case">
-                                            <div class="tooltip tooltip-right font-normal"
-                                                data-tip="Add custom prefix"><input
-                                                    class="input input-bordered input-xs w-min max-w-[3.8rem]"
-                                                    type="text" placeholder="Prefix–"></div> <span>Class
-                                                name</span>
-                                        </th>
-                                        <th class="normal-case">Type</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th class="font-normal"><span class="font-mono lowercase">hero</span></th>
-                                        <td><span class="badge badge-sm badge-ghost w-20">Component</span> </td>
-                                        <td>Container element</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="font-normal"><span class="font-mono lowercase">hero-content</span>
-                                        </th>
-                                        <td><span class="badge badge-sm badge-ghost w-20">Component</span> </td>
-                                        <td>Container for content</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="font-normal"><span class="font-mono lowercase">hero-overlay</span>
-                                        </th>
-                                        <td><span class="badge badge-sm badge-ghost w-20">Component</span> </td>
-                                        <td>Overlay that covers the background image</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="component-preview not-prose text-base-content my-4 max-w-4xl" id="centered-hero">
-                            <div class="pb-2 text-sm font-bold"><a class="opacity-20 hover:opacity-60"
-                                    href="#centered-hero">#</a> <span class="component-preview-title">Centered
-                                    hero</span></div>
-                            <div class="grid">
-                                <div class="tabs z-10 -mb-px"><button
-                                        class="tab tab-lifted tab-active [--tab-bg:hsl(var(--b2))]">Preview</button>
-                                    <button class="tab tab-lifted [--tab-border-color:transparent]">HTML</button>
-                                    <button class="tab tab-lifted [--tab-border-color:transparent]">JSX</button>
-                                    <div
-                                        class="tab tab-lifted mr-6 flex-1 cursor-default [--tab-border-color:transparent]">
-                                    </div>
-                                </div>
-                                <div class="bg-base-300 rounded-b-box rounded-tr-box relative overflow-x-auto">
-                                    <div class="preview border-base-300 bg-base-200 rounded-b-box rounded-tr-box flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4 undefined"
-                                        style="background-size: 5px 5px">
-                                        <div class="hero min-h-[30rem] rounded bg-base-200">
-                                            <div class="text-center hero-content">
-                                                <div class="max-w-md">
-                                                    <h3 class="text-5xl font-bold">Hello there</h3>
-                                                    <p class="py-6">Provident cupiditate voluptatem et in. Quaerat
-                                                        fugiat ut assumenda excepturi exercitationem quasi. In deleniti
-                                                        eaque aut repudiandae et a id nisi.</p> <button
-                                                        class="btn btn-primary">Get Started</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                        <div class="hero min-h-screen bg-base-200">
+                            <div class="hero-content text-center">
+                                <div class="max-w-md">
+                                    <h1 class="text-5xl font-bold">Hello there</h1>
+                                    <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut
+                                        assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
+                                        id nisi.</p>
+                                    <button class="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="component-preview not-prose text-base-content my-4 max-w-4xl"
-                            id="hero-with-figure">
-                            <div class="pb-2 text-sm font-bold"><a class="opacity-20 hover:opacity-60"
-                                    href="#hero-with-figure">#</a> <span class="component-preview-title">Hero with
-                                    figure</span></div>
-                            <div class="grid">
-                                <div class="tabs z-10 -mb-px"><button
-                                        class="tab tab-lifted tab-active [--tab-bg:hsl(var(--b2))]">Preview</button>
-                                    <button class="tab tab-lifted [--tab-border-color:transparent]">HTML</button>
-                                    <button class="tab tab-lifted [--tab-border-color:transparent]">JSX</button>
-                                    <div
-                                        class="tab tab-lifted mr-6 flex-1 cursor-default [--tab-border-color:transparent]">
-                                    </div>
-                                </div>
-                                <div class="bg-base-300 rounded-b-box rounded-tr-box relative overflow-x-auto">
-                                    <div class="preview border-base-300 bg-base-200 rounded-b-box rounded-tr-box flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4 undefined"
-                                        style="background-size: 5px 5px">
-                                        <div class="hero min-h-[30rem] rounded bg-base-200">
-                                            <div class="flex-col hero-content lg:flex-row"><img
-                                                    src="https://placeimg.com/260/400/arch"
-                                                    class="max-w-sm rounded-lg shadow-2xl"
-                                                    alt="Tailwind CSS hero component">
-                                                <div>
-                                                    <h3 class="text-5xl font-bold">Box Office News!</h3>
-                                                    <p class="py-6">Provident cupiditate voluptatem et in. Quaerat
-                                                        fugiat ut assumenda excepturi exercitationem quasi. In deleniti
-                                                        eaque aut repudiandae et a id nisi.</p> <button
-                                                        class="btn btn-primary">Get Started</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="component-preview not-prose text-base-content my-4 max-w-4xl"
-                            id="hero-with-figure-but-reverse-order">
-                            <div class="pb-2 text-sm font-bold"><a class="opacity-20 hover:opacity-60"
-                                    href="#hero-with-figure-but-reverse-order">#</a> <span
-                                    class="component-preview-title">Hero with figure but reverse order</span></div>
-                            <div class="grid">
-                                <div class="tabs z-10 -mb-px"><button
-                                        class="tab tab-lifted tab-active [--tab-bg:hsl(var(--b2))]">Preview</button>
-                                    <button class="tab tab-lifted [--tab-border-color:transparent]">HTML</button>
-                                    <button class="tab tab-lifted [--tab-border-color:transparent]">JSX</button>
-                                    <div
-                                        class="tab tab-lifted mr-6 flex-1 cursor-default [--tab-border-color:transparent]">
-                                    </div>
-                                </div>
-                                <div class="bg-base-300 rounded-b-box rounded-tr-box relative overflow-x-auto">
-                                    <div class="preview border-base-300 bg-base-200 rounded-b-box rounded-tr-box flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4 undefined"
-                                        style="background-size: 5px 5px">
-                                        <div class="hero min-h-[30rem] rounded bg-base-200">
-                                            <div class="flex-col hero-content lg:flex-row-reverse"><img
-                                                    src="https://placeimg.com/260/400/arch"
-                                                    class="max-w-sm rounded-lg shadow-2xl"
-                                                    alt="Tailwind CSS hero component">
-                                                <div>
-                                                    <h3 class="text-5xl font-bold">Box Office News!</h3>
-                                                    <p class="py-6">Provident cupiditate voluptatem et in. Quaerat
-                                                        fugiat ut assumenda excepturi exercitationem quasi. In deleniti
-                                                        eaque aut repudiandae et a id nisi.</p> <button
-                                                        class="btn btn-primary">Get Started</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="component-preview not-prose text-base-content my-4 max-w-4xl"
-                            id="hero-with-form">
-                            <div class="pb-2 text-sm font-bold"><a class="opacity-20 hover:opacity-60"
-                                    href="#hero-with-form">#</a> <span class="component-preview-title">Hero with
-                                    form</span></div>
-                            <div class="grid">
-                                <div class="tabs z-10 -mb-px"><button
-                                        class="tab tab-lifted tab-active [--tab-bg:hsl(var(--b2))]">Preview</button>
-                                    <button class="tab tab-lifted [--tab-border-color:transparent]">HTML</button>
-                                    <button class="tab tab-lifted [--tab-border-color:transparent]">JSX</button>
-                                    <div
-                                        class="tab tab-lifted mr-6 flex-1 cursor-default [--tab-border-color:transparent]">
-                                    </div>
-                                </div>
-                                <div class="bg-base-300 rounded-b-box rounded-tr-box relative overflow-x-auto">
-                                    <div class="preview border-base-300 bg-base-200 rounded-b-box rounded-tr-box flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4 undefined"
-                                        style="background-size: 5px 5px">
-                                        <div class="hero min-h-[30rem] rounded bg-base-200">
-                                            <div class="flex-col hero-content lg:flex-row-reverse">
-                                                <div class="text-center lg:text-left">
-                                                    <h3 class="text-5xl font-bold">Login now!</h3>
-                                                    <p class="py-6">Provident cupiditate voluptatem et in. Quaerat
-                                                        fugiat ut assumenda excepturi exercitationem quasi. In deleniti
-                                                        eaque aut repudiandae et a id nisi.</p>
-                                                </div>
-                                                <div
-                                                    class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                                                    <div class="card-body">
-                                                        <div class="form-control"><label class="label"><span
-                                                                    class="label-text">Email</span></label> <input
-                                                                type="text" placeholder="email"
-                                                                class="input input-bordered"></div>
-                                                        <div class="form-control"><label class="label"><span
-                                                                    class="label-text">Password</span></label> <input
-                                                                type="text" placeholder="password"
-                                                                class="input input-bordered"> <label
-                                                                class="label"><a href="#"
-                                                                    class="label-text-alt link link-hover">Forgot
-                                                                    password?</a></label></div>
-                                                        <div class="form-control mt-6"><button
-                                                                class="btn btn-primary">Login</button></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="component-preview not-prose text-base-content my-4 max-w-4xl"
-                            id="hero-with-overlay-image">
-                            <div class="pb-2 text-sm font-bold"><a class="opacity-20 hover:opacity-60"
-                                    href="#hero-with-overlay-image">#</a> <span class="component-preview-title">Hero
-                                    with overlay image</span></div>
-                            <div class="grid">
-                                <div class="tabs z-10 -mb-px"><button
-                                        class="tab tab-lifted tab-active [--tab-bg:hsl(var(--b2))]">Preview</button>
-                                    <button class="tab tab-lifted [--tab-border-color:transparent]">HTML</button>
-                                    <button class="tab tab-lifted [--tab-border-color:transparent]">JSX</button>
-                                    <div
-                                        class="tab tab-lifted mr-6 flex-1 cursor-default [--tab-border-color:transparent]">
-                                    </div>
-                                </div>
-                                <div class="bg-base-300 rounded-b-box rounded-tr-box relative overflow-x-auto">
-                                    <div class="preview border-base-300 bg-base-200 rounded-b-box rounded-tr-box flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4 undefined"
-                                        style="background-size: 5px 5px">
-                                        <div class="hero min-h-[30rem] rounded"
-                                            style="background-image: url(&quot;https://placeimg.com/1000/800/arch&quot;);">
-                                            <div class="hero-overlay rounded bg-opacity-60"></div>
-                                            <div class="text-center hero-content text-neutral-content">
-                                                <div class="max-w-md">
-                                                    <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-                                                    <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat
-                                                        fugiat ut assumenda excepturi exercitationem quasi. In deleniti
-                                                        eaque aut repudiandae et a id nisi.</p> <button
-                                                        class="btn btn-primary">Get Started</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="not-prose pb-10">
-                            <div class="bg-base-content/10 my-10 mx-1 h-px"></div>
-                            <div class="flex justify-between">
-                                <div><a href="/components/footer"
-                                        class="btn btn-sm md:btn-md btn-ghost gap-2 normal-case lg:gap-3"><svg
-                                            class="h-6 w-6 fill-current md:h-8 md:w-8"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24">
-                                            <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z">
-                                            </path>
-                                        </svg>
-                                        <div class="flex flex-col items-start"><span
-                                                class="text-base-content/50 hidden text-xs font-normal md:block">Prev</span>
-                                            <span>Footer</span></div>
-                                    </a></div>
-                                <div><a href="/components/indicator"
-                                        class="btn btn-sm md:btn-md gap-2 normal-case lg:gap-3">
-                                        <div class="flex flex-col items-end"><span
-                                                class="text-neutral-content/50 hidden text-xs font-normal md:block">Next</span>
-                                            <span>Indicator</span></div> <svg
-                                            class="h-6 w-6 fill-current md:h-8 md:w-8"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24">
-                                            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z">
-                                            </path>
-                                        </svg>
-                                    </a></div>
-                            </div>
-                            <div class="bg-base-content/10 my-10 mx-1 h-px"></div>
-                            <div class="flex flex-col justify-between gap-2 px-4 text-xs md:flex-row">
-                                <div class="flex flex-col gap-2">
-                                    <div class="flex items-center gap-2"><svg
-                                            class="inline-block h-4 w-4 fill-current"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd"
-                                                d="M12,23 C5.92486775,23 1,18.0751322 1,12 C1,5.92486775 5.92486775,1 12,1 C18.0751322,1 23,5.92486775 23,12 C23,18.0751322 18.0751322,23 12,23 Z M12,21 C16.9705627,21 21,16.9705627 21,12 C21,7.02943725 16.9705627,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 Z M12.0003283,16.9983464 C11.4478622,16.9983464 11,16.5506311 11,15.9983464 C11,15.4460616 11.4478622,14.9983464 12.0003283,14.9983464 C12.5527943,14.9983464 13.0006565,15.4460616 13.0006565,15.9983464 C13.0006565,16.5506311 12.5527943,16.9983464 12.0003283,16.9983464 Z M13,14 L11,14 C11,12.2983529 11.6245803,11.5696759 13.0527864,10.8555728 C13.8745803,10.4446759 14,10.2983529 14,9.5 C14,8.556407 13.2771608,8 12,8 C10.8954305,8 10,8.8954305 10,10 L8,10 C8,7.790861 9.790861,6 12,6 C14.2843464,6 16,7.32062807 16,9.5 C16,11.2016471 15.3754197,11.9303241 13.9472136,12.6444272 C13.1254197,13.0553241 13,13.2016471 13,14 Z">
-                                            </path>
-                                        </svg>
-                                        <div>Do you have a question? <a target="_blank" rel="noopener"
-                                                class="link"
-                                                href="https://github.com/saadeghi/daisyui/discussions">ask the
-                                                community</a></div>
-                                    </div>
-                                    <div class="flex items-center gap-2"><svg
-                                            class="inline-block h-4 w-4 fill-current"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 1792 1792">
-                                            <path
-                                                d="M1696 960q0 26-19 45t-45 19h-224q0 171-67 290l208 209q19 19 19 45t-19 45q-18 19-45 19t-45-19l-198-197q-5 5-15 13t-42 28.5-65 36.5-82 29-97 13v-896h-128v896q-51 0-101.5-13.5t-87-33-66-39-43.5-32.5l-15-14-183 207q-20 21-48 21-24 0-43-16-19-18-20.5-44.5t15.5-46.5l202-227q-58-114-58-274h-224q-26 0-45-19t-19-45 19-45 45-19h224v-294l-173-173q-19-19-19-45t19-45 45-19 45 19l173 173h844l173-173q19-19 45-19t45 19 19 45-19 45l-173 173v294h224q26 0 45 19t19 45zm-480-576h-640q0-133 93.5-226.5t226.5-93.5 226.5 93.5 93.5 226.5z">
-                                            </path>
-                                        </svg>
-                                        <div>Do you see a bug? <a target="_blank" rel="noopener" class="link"
-                                                href="https://github.com/saadeghi/daisyui/issues?q=Hero">open an issue
-                                                on GitHub</a></div>
-                                    </div>
-                                    <div class="flex items-center gap-2"><svg
-                                            class="inline-block h-4 w-4 fill-current"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 512 512">
-                                            <path
-                                                d="M256,448a32,32,0,0,1-18-5.57c-78.59-53.35-112.62-89.93-131.39-112.8-40-48.75-59.15-98.8-58.61-153C48.63,114.52,98.46,64,159.08,64c44.08,0,74.61,24.83,92.39,45.51a6,6,0,0,0,9.06,0C278.31,88.81,308.84,64,352.92,64,413.54,64,463.37,114.52,464,176.64c.54,54.21-18.63,104.26-58.61,153-18.77,22.87-52.8,59.45-131.39,112.8A32,32,0,0,1,256,448Z">
-                                            </path>
-                                        </svg>
-                                        <div>Do you like daisyUI? <a target="_blank" rel="noopener" class="link"
-                                                href="https://twitter.com/intent/tweet?text=daisyUI%20%0D%0AComponents%20for%20Tailwind%20CSS%20%0D%0Ahttps://daisyui.com">tweet
-                                                about it!</a></div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <div class="flex items-center gap-2"><svg
-                                            class="inline-block h-4 w-4 fill-current"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24">
-                                            <path
-                                                d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z">
-                                            </path>
-                                        </svg>
-                                        <div><a target="_blank" rel="noopener" class="link"
-                                                href="https://github.com/saadeghi/daisyui/blob/master/src/docs/src/routes/components/hero.svelte.md?plain=1">Edit
-                                                this page on GitHub</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+
+
                         <div class="not-prose flex justify-center xl:hidden">
                             <div class="flex flex-col gap-2 pb-6">
                                 <h3 class="text-base-content/50 text-xs font-bold">Sponsors</h3>
@@ -1018,8 +727,7 @@
                                         rel="nofollow"
                                         class="flex w-[130px] flex-col items-center rounded bg-base-100 border-base-100 border-base-content/10 hover:border-base-content/20 border"><svg
                                             class="fill-base-content mt-2 mb-1" width="110" height="20"
-                                            viewBox="0 0 128 22" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                            viewBox="0 0 128 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M41.5717 8.50469C41.5717 6.29343 39.955 4.72344 37.3469 4.72344C35.234 4.72344 33.7217 5.68779 33.7217 7.27867C33.7217 11.6864 44.9893 8.11404 44.9893 15.8854C44.9893 19.615 41.7289 21.728 37.5558 21.728C34.0583 21.728 31.1468 20.1863 30.0535 17.3387L33.0178 14.3731C33.0178 17.007 34.7377 18.6728 37.5558 18.6728C39.767 18.6728 41.4157 17.6556 41.4157 16.0131C41.4157 11.5525 30.1481 15.1262 30.1481 7.50962C30.1481 3.9888 33.3826 1.66821 37.3469 1.66821C40.9095 1.66821 43.3935 3.37334 44.364 5.70744L41.5717 8.50469Z">
                                             </path>
@@ -1136,219 +844,33 @@
             <aside class="bg-base-200 w-80">
                 <div
                     class="z-20 bg-base-200 bg-opacity-90 backdrop-blur sticky top-0 items-center gap-2 px-4 py-2 hidden lg:flex ">
-                    <a href="/" aria-current="page" aria-label="Homepage"
-                        class="flex-0 btn btn-ghost px-2">
+                    <a href="/" aria-current="page" aria-label="Homepage" class="flex-0 btn btn-ghost px-2">
                         <div
                             class="font-title text-primary inline-flex text-lg transition-all duration-200 md:text-3xl">
-                            <span class="lowercase">daisy</span> <span class="text-base-content uppercase">UI</span>
+                            <span class="lowercase">{{ config('app.name') }}</span> <span
+                                class="text-base-content uppercase">- UI</span>
                         </div>
                     </a> <a href="/docs/changelog" class="link link-hover font-mono text-xs text-opacity-50">
-                        <div data-tip="Changelog" class="tooltip tooltip-bottom">2.31.0</div>
-                    </a></div>
+                        <div data-tip="Changelog" class="tooltip tooltip-bottom">{{ config('app.version') }}</div>
+                    </a>
+                </div>
                 <div class="h-4"></div>
                 <ul class="menu menu-compact flex flex-col p-0 px-4">
-                    <li><a sveltekit:prefetch="" href="/docs/install" id="" class="flex gap-4   "><span
-                                class="flex-none"><svg width="24" height="24"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="w-6 h-6 stroke-current">
+                    <li>
+                        <a href="{{ url('/dashboard') }}" id="" class="flex gap-4   "><span
+                                class="flex-none">
+                                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" class="w-6 h-6 stroke-current">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20">
                                     </path>
-                                </svg></span> <span class="flex-1">Install</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/docs/use" id="" class="flex gap-4   "><span
-                                class="flex-none"><svg width="24" height="24"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="w-6 h-6 stroke-current">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg></span> <span class="flex-1">Use</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/docs/customize" id=""
-                            class="flex gap-4   "><span class="flex-none"><svg width="24" height="24"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="w-6 h-6 stroke-current">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                                </svg></span> <span class="flex-1">Customize components</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/docs/config" id="" class="flex gap-4   "><span
-                                class="flex-none"><svg width="24" height="24"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="w-6 h-6 stroke-current">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
-                                    </path>
-                                </svg></span> <span class="flex-1">Config</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/docs/colors" id="" class="flex gap-4   "><span
-                                class="flex-none"><svg width="24" height="24"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="w-6 h-6 fill-current">
-                                    <path
-                                        d="M19,11.5C19,11.5 17,13.67 17,15C17,16.1 17.9,17 19,17C20.1,17 21,16.1 21,15C21,13.67 19,11.5 19,11.5M5.21,10L10,5.21L14.79,10M16.56,8.94L7.62,0L6.21,1.41L8.59,3.79L3.44,8.94C2.85,9.5 2.85,10.47 3.44,11.06L8.94,16.56C9.23,16.85 9.62,17 10,17C10.38,17 10.77,16.85 11.06,16.56L16.56,11.06C17.15,10.47 17.15,9.5 16.56,8.94Z">
-                                    </path>
-                                </svg></span> <span class="flex-1">Colors</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/docs/themes" id="" class="flex gap-4   "><span
-                                class="flex-none"><svg width="24" height="24"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="w-6 h-6 stroke-current">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
-                                    </path>
-                                </svg></span> <span class="flex-1">Themes</span> <span
-                                class="badge badge-sm flex-none lowercase">updated</span></a> </li>
-                    <li><a sveltekit:prefetch="" href="/theme-generator" id=""
-                            class="flex gap-4   "><span class="flex-none"><svg width="24" height="24"
-                                    xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current"
-                                    viewBox="0 0 512 512">
-                                    <title>ionicons-v5-m</title>
-                                    <path d="M96,208H48a16,16,0,0,1,0-32H96a16,16,0,0,1,0,32Z"></path>
-                                    <line x1="90.25" y1="90.25" x2="124.19" y2="124.19"></line>
-                                    <path
-                                        d="M124.19,140.19a15.91,15.91,0,0,1-11.31-4.69L78.93,101.56a16,16,0,0,1,22.63-22.63l33.94,33.95a16,16,0,0,1-11.31,27.31Z">
-                                    </path>
-                                    <path d="M192,112a16,16,0,0,1-16-16V48a16,16,0,0,1,32,0V96A16,16,0,0,1,192,112Z">
-                                    </path>
-                                    <line x1="293.89" y1="90.25" x2="259.95" y2="124.19"></line>
-                                    <path
-                                        d="M260,140.19a16,16,0,0,1-11.31-27.31l33.94-33.95a16,16,0,0,1,22.63,22.63L271.27,135.5A15.94,15.94,0,0,1,260,140.19Z">
-                                    </path>
-                                    <line x1="124.19" y1="259.95" x2="90.25" y2="293.89"></line>
-                                    <path
-                                        d="M90.25,309.89a16,16,0,0,1-11.32-27.31l33.95-33.94a16,16,0,0,1,22.62,22.63l-33.94,33.94A16,16,0,0,1,90.25,309.89Z">
-                                    </path>
-                                    <path
-                                        d="M219,151.83a26,26,0,0,0-36.77,0l-30.43,30.43a26,26,0,0,0,0,36.77L208.76,276a4,4,0,0,0,5.66,0L276,214.42a4,4,0,0,0,0-5.66Z">
-                                    </path>
-                                    <path
-                                        d="M472.31,405.11,304.24,237a4,4,0,0,0-5.66,0L237,298.58a4,4,0,0,0,0,5.66L405.12,472.31a26,26,0,0,0,36.76,0l30.43-30.43h0A26,26,0,0,0,472.31,405.11Z">
-                                    </path>
-                                </svg></span> <span class="flex-1">Theme Generator</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/docs/layout-and-typography" id=""
-                            class="flex gap-4   "><span class="flex-none"><svg width="24" height="24"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="w-6 h-6 fill-current">
-                                    <path
-                                        d="M4,2 L20,2 C21.1045695,2 22,2.8954305 22,4 L22,20 C22,21.1045695 21.1045695,22 20,22 L4,22 C2.8954305,22 2,21.1045695 2,20 L2,4 C2,2.8954305 2.8954305,2 4,2 Z M4,4 L4,20 L20,20 L20,4 L4,4 Z M14.7999209,15 L9.19992091,15 L8,18 L6,18 L11,6 L13,6 L18,18 L16,18 L14.7999209,15 Z M13.9998682,13 L11.9997364,8 L9.99986818,13 L13.9998682,13 Z">
-                                    </path>
-                                </svg></span> <span class="flex-1">Layout &amp; Typography</span> </a> </li>
+                                </svg>
+                            </span>
+                            <span class="flex-1">Dashboard</span>
+                        </a>
+                    </li>
                 </ul>
-                <ul class="menu menu-compact flex flex-col p-0 px-4">
-                    <li></li>
-                    <li class="menu-title"><span>Actions</span></li>
-                    <li><a sveltekit:prefetch="" href="/components/button" id="" class="flex gap-4   ">
-                            <span class="flex-1">Button</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/dropdown" id=""
-                            class="flex gap-4   "> <span class="flex-1">Dropdown</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/modal" id="" class="flex gap-4   ">
-                            <span class="flex-1">Modal</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/swap" id="" class="flex gap-4   ">
-                            <span class="flex-1">Swap</span> </a> </li>
-                </ul>
-                <ul class="menu menu-compact flex flex-col p-0 px-4">
-                    <li></li>
-                    <li class="menu-title"><span>Data display</span></li>
-                    <li><a sveltekit:prefetch="" href="/components/alert" id="" class="flex gap-4   ">
-                            <span class="flex-1">Alert</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/avatar" id="" class="flex gap-4   ">
-                            <span class="flex-1">Avatar</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/badge" id="" class="flex gap-4   ">
-                            <span class="flex-1">Badge</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/card" id="" class="flex gap-4   ">
-                            <span class="flex-1">Card</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/carousel" id=""
-                            class="flex gap-4   "> <span class="flex-1">Carousel</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/collapse" id=""
-                            class="flex gap-4   "> <span class="flex-1">Collapse</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/countdown" id=""
-                            class="flex gap-4   "> <span class="flex-1">Countdown</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/kbd" id="" class="flex gap-4   ">
-                            <span class="flex-1">Kbd</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/progress" id=""
-                            class="flex gap-4   "> <span class="flex-1">Progress</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/radial-progress" id=""
-                            class="flex gap-4   "> <span class="flex-1">Radial progress</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/stat" id="" class="flex gap-4   ">
-                            <span class="flex-1">Stat</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/table" id="" class="flex gap-4   ">
-                            <span class="flex-1">Table</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/tooltip" id=""
-                            class="flex gap-4   "> <span class="flex-1">Tooltip</span> </a> </li>
-                </ul>
-                <ul class="menu menu-compact flex flex-col p-0 px-4">
-                    <li></li>
-                    <li class="menu-title"><span>Data input</span></li>
-                    <li><a sveltekit:prefetch="" href="/components/checkbox" id=""
-                            class="flex gap-4   "> <span class="flex-1">Checkbox</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/input" id="" class="flex gap-4   ">
-                            <span class="flex-1">Text input</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/radio" id="" class="flex gap-4   ">
-                            <span class="flex-1">Radio</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/range" id="" class="flex gap-4   ">
-                            <span class="flex-1">Range</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/rating" id="" class="flex gap-4   ">
-                            <span class="flex-1">Rating</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/select" id="" class="flex gap-4   ">
-                            <span class="flex-1">Select</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/textarea" id=""
-                            class="flex gap-4   "> <span class="flex-1">Textarea</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/toggle" id="" class="flex gap-4   ">
-                            <span class="flex-1">Toggle</span> </a> </li>
-                </ul>
-                <ul class="menu menu-compact flex flex-col p-0 px-4">
-                    <li></li>
-                    <li class="menu-title"><span>Layout</span></li>
-                    <li><a sveltekit:prefetch="" href="/components/artboard" id=""
-                            class="flex gap-4   "> <span class="flex-1">Artboard</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/button-group" id=""
-                            class="flex gap-4   "> <span class="flex-1">Button group</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/divider" id=""
-                            class="flex gap-4   "> <span class="flex-1">Divider</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/drawer" id="" class="flex gap-4   ">
-                            <span class="flex-1">Drawer</span> <span
-                                class="badge badge-sm flex-none lowercase">updated</span></a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/footer" id="" class="flex gap-4   ">
-                            <span class="flex-1">Footer</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/hero" id=""
-                            class="flex gap-4 active  "> <span class="flex-1">Hero</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/indicator" id=""
-                            class="flex gap-4   "> <span class="flex-1">Indicator</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/input-group" id=""
-                            class="flex gap-4   "> <span class="flex-1">Input group</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/mask" id="" class="flex gap-4   ">
-                            <span class="flex-1">Mask</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/stack" id="" class="flex gap-4   ">
-                            <span class="flex-1">Stack</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/toast" id="" class="flex gap-4   ">
-                            <span class="flex-1">Toast</span> </a> </li>
-                </ul>
-                <ul class="menu menu-compact flex flex-col p-0 px-4">
-                    <li></li>
-                    <li class="menu-title"><span>Navigation</span></li>
-                    <li><a sveltekit:prefetch="" href="/components/breadcrumbs" id=""
-                            class="flex gap-4   "> <span class="flex-1">Breadcrumbs</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/bottom-navigation" id=""
-                            class="flex gap-4   "> <span class="flex-1">Bottom navigation</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/link" id="" class="flex gap-4   ">
-                            <span class="flex-1">Link</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/menu" id="" class="flex gap-4   ">
-                            <span class="flex-1">Menu</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/navbar" id="" class="flex gap-4   ">
-                            <span class="flex-1">Navbar</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/pagination" id=""
-                            class="flex gap-4   "> <span class="flex-1">Pagination</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/steps" id="" class="flex gap-4   ">
-                            <span class="flex-1">Steps</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/tab" id="" class="flex gap-4   ">
-                            <span class="flex-1">Tab</span> </a> </li>
-                </ul>
-                <ul class="menu menu-compact flex flex-col p-0 px-4">
-                    <li></li>
-                    <li class="menu-title"><span>Mockup</span></li>
-                    <li><a sveltekit:prefetch="" href="/components/mockup-code" id=""
-                            class="flex gap-4   "> <span class="flex-1">Code</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/mockup-phone" id=""
-                            class="flex gap-4   "> <span class="flex-1">Phone</span> </a> </li>
-                    <li><a sveltekit:prefetch="" href="/components/mockup-window" id=""
-                            class="flex gap-4   "> <span class="flex-1">Window</span> </a> </li>
-                </ul>
+
                 <ul class="menu menu-compact flex flex-col p-0 px-4"> </ul>
                 <div
                     class="from-base-200 pointer-events-none sticky bottom-0 flex h-20 bg-gradient-to-t to-transparent">
