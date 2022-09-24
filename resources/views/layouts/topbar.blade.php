@@ -26,14 +26,20 @@ backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-m
 
             {{ Auth::user()->firstName ?? 'Welcome!' }}
 
-            <div class="dropdown dropdown-end"><label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                    <div class="w-10 rounded-full"><img src="https://placeimg.com/80/80/people"></div>
+            <div class="dropdown dropdown-end">
+
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar {{ Auth::check() == true ? 'online' : 'offline' }}">
+                    <div class="w-10 rounded-full ">
+
+                        <img src="https://placeimg.com/80/80/people">
+                    </div>
                 </label>
+
                 <ul tabindex="0"
                     class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-auto px-3">
 
 
-                    <li><a class="flex items-center justify-start  gap-2"> <span>
+                    <li><a href={{ route('profile.index') }} class="flex items-center justify-start  gap-2"> <span>
                         <x-heroicon-o-user-circle class="text-current w-5 h-5 " />
                             </span> <span>{{ __('Profile') }}</span></a>
                     </li>

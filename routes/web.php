@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    if(Auth::check()) {
+        return view('dashboard');
+    }
     return view('auth.login');
 });
 Route::get('/test', function () {
@@ -23,5 +29,8 @@ Route::get('/test', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::resource('profile', ProfileController::class)->middleware(['auth']);
+Route::resource('users', RegisteredUserController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
