@@ -1,0 +1,4 @@
+models:
+    Post: {  }
+    Profile: { telephone: string, profile_details: string, profile_image: string, last_login_at: datetime, last_login_ip: 'string:45', user_id: 'biginteger unsigned' }
+    User: { firstname: string, lastname: string, isadmin: 'boolean default:0', email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }

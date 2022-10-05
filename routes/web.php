@@ -22,15 +22,12 @@ Route::get('/', function () {
     }
     return view('auth.login');
 });
-Route::get('/test', function () {
-    return view('test');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('profile', ProfileController::class)->middleware(['auth']);
-Route::resource('users', RegisteredUserController::class)->middleware(['auth']);
+Route::resource('profile', ProfileController::class)->middleware(['auth','verified']);
+Route::resource('users', RegisteredUserController::class)->middleware(['auth','verified']);
 
 require __DIR__.'/auth.php';

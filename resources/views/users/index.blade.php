@@ -12,7 +12,7 @@
                     <div class="w-full">
                         <div class="overflow-auto lg:overflow-visible ">
                             <table class="table text-gray-400 border-separate space-y-6 text-sm w-full">
-                                <thead class="bg-gray-800 text-gray-500">
+                                <thead class="bg-gray-100 text-gray-500">
                                     <tr>
                                         <th class="p-3">User</th>
                                         <th class="p-3 text-left">Telephone</th>
@@ -24,14 +24,14 @@
                                 <tbody>
 
                                     @foreach ($users as $user)
-                                        <tr class="bg-gray-800">
+                                        <tr class="bg-gray-100">
                                             <td class="p-3">
                                                 <div class="flex items-center">
                                                     <img class="rounded-full h-12 w-12  object-cover"
                                                         src="{{ $user->profile->profile_image ?? asset('../images/profile.png') }}"
                                                         alt="Profile Image">
                                                     <div class="ml-3">
-                                                        <div class="">{{ $user->firstName }} {{ $user->lastName }}
+                                                        <div class="italic">{{ $user->firstName }} {{ $user->lastName }}
                                                         </div>
                                                         <div class="text-gray-500">{{ $user->email }}</div>
                                                     </div>

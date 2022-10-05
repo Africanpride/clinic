@@ -25,18 +25,7 @@
             </a>
 
         </li>
-        <li>
 
-            <a href="{{ url('/test') }}"
-            id=""
-            class="{{ (Request::segment(1) == 'test' ? 'active' : '') }}  flex gap-4   ">
-                <span class="flex-none">
-                    <x-heroicon-o-building-office-2 class="w-6 h-6 text-current" />
-                </span>
-                <span class="flex-1">Test</span>
-            </a>
-
-        </li>
         <li>
             <a href="{{ url('/users') }}" id="" class="flex gap-4   ">
                 <span class="flex-none">

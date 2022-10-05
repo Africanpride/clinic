@@ -44,7 +44,7 @@ backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-m
                             </span> <span>{{ __('Profile') }}</span></a>
                     </li>
 
-                    <li><a class="flex items-center justify-start  gap-2"> <span>
+                    <li><a href={{ route('profile.index') }} class="flex items-center justify-start  gap-2"> <span>
                                 <x-radix-gear class="text-current w-5 h-5 " />
                             </span> <span>{{ __('Settings') }}</span></a>
                     </li>

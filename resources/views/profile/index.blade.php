@@ -5,13 +5,14 @@
                 <img src="https://source.unsplash.com/75x75/?portrait" alt=""
                     class="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700">
                 <div class="flex flex-col">
-                    <h4 class="text-lg font-semibold text-center md:text-left">{{ Auth::user()->firstName }} {{ Auth::user()->lastName }}</h4>
+                    <h4 class="text-lg font-semibold text-center md:text-left">{{ Auth::user()->firstName ?? '' }} {{ Auth::user()->lastName ?? '' }}</h4>
                     <p class="dark:text-gray-400">{{ Auth::user()->profile->profile_details ?? 'Sed non nibh iaculis, posuere diam vitae, consectetur neque. Integer velit ligula, semper sed nisl in, cursus commodo elit. Pellentesque sit amet mi luctus ligula euismod lobortis ultricies et nibh.' }}</p>
                 </div>
             </div>
 
         </div>
     </section>
+
     <section>
         <!-- component -->
         <div class="flex items-center justify-center p-12">
@@ -19,6 +20,7 @@
             <!-- Learn More: https://formbold.com -->
             <div class="mx-auto w-full md:max-w-6xl">
                 <form action="https://formbold.com/s/FORM_ID" method="POST">
+                    @csrf
                     <div class="mb-5 flex justify-between items-center gap-x-2">
                         <div class="flex-1">
                             <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
