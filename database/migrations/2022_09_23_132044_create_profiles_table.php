@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('telephone');
             $table->string('profile_details');
             $table->string('profile_image');
-            $table->timestamp('last_login_at');
             $table->ipAddress('last_login_ip');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
 

@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'telephone',
         'profile_details',
         'profile_image',
-        'last_login_at',
         'last_login_ip',
     ];
 

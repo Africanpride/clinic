@@ -44,7 +44,7 @@
                                                 {{ $user->profile->telephone ?? 'N/A ' }}
                                             </td>
                                             <td class="p-3 font-bold">
-                                                {{ $user->updated_at ?? '' }}
+                                                {{ $user->profile->last_login_at ?? '' }}
                                             </td>
                                             <td class="p-3">
                                                 <span

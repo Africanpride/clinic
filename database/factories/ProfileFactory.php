@@ -21,7 +21,6 @@ class ProfileFactory extends Factory
             'telephone'=> fake()->e164PhoneNumber(),
             'profile_details'=> fake()->text(),
             'profile_image'=> fake()->imageUrl(),
-            'last_login_at'=> fake()->date(),
             'last_login_ip'=> fake()->ipv4(),
         ];
     }
