@@ -1,5 +1,20 @@
 models:
-  # ...
-
+  Minister:
+    id
+    timestamps
+  Event:
+    id
+    timestamps
 controllers:
-  # ...
+  Post:
+    resource
+  Minister:
+    resource
+  Profile:
+    resource
+  User:
+    resource
+  Event:
+    resource
+
+

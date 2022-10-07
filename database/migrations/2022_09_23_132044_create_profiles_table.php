@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('profile_image');
             $table->timestamp('last_login_at');
             $table->ipAddress('last_login_ip');
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
 
 
             $table->timestamps();

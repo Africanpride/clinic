@@ -2,91 +2,100 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileStoreRequest;
+use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\Profile;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\View;
-use App\Http\Requests\StoreProfileRequest;
-use App\Http\Requests\UpdateProfileRequest;
+use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $profile = Auth::user()->profile();
+        $profiles = Profile::all();
 
-            return view ('profile.index', compact('profile'));
-
-
+        return view('profile.index', compact('profiles'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('profile.create');
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreProfileRequest  $request
+     * @param \App\Http\Requests\ProfileStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProfileRequest $request)
+    public function store(ProfileStoreRequest $request)
     {
-        //
+        $profile = Profile::create($request->validated());
+
+        $request->session()->flash('profile.id', $profile->id);
+
+        return redirect()->route('profile.index');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Profile  $profile
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Profile $profile
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show(Request $request, Profile $profile)
     {
-        //
+        return view('profile.show', compact('profile'));
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Profile  $profile
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Profile $profile
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profile $profile)
+    public function edit(Request $request, Profile $profile)
     {
-        //
+        return view('profile.edit', compact('profile'));
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateProfileRequest  $request
-     * @param  \App\Models\Profile  $profile
+     * @param \App\Http\Requests\ProfileUpdateRequest $request
+     * @param \App\Models\Profile $profile
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProfileRequest $request, Profile $profile)
+    public function update(ProfileUpdateRequest $request, Profile $profile)
     {
-        //
+        $profile->update($request->validated());
+
+        $request->session()->flash('profile.id', $profile->id);
+
+        return redirect()->route('profile.index');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Profile  $profile
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Profile $profile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profile $profile)
+    public function destroy(Request $request, Profile $profile)
     {
-        //
+
+        dd($profile);
+
+        // $user = User::findOrfail($id);
+        // $email = $user->email;
+        // $fullName = $user->firstName . " " .$user->lastName;
+        // // dd($user->id);
+        // $user->delete();
+        // // return view('users.index')->with('status', 'User Deleted Successfully!');
+        // return redirect('/admin/users')->with('status', 'User: '. $fullName . ' with email: ' .  $email . ' deleted Successfully!');
+
+        $profile->delete();
+
+        return redirect()->route('profile.index');
     }
 }

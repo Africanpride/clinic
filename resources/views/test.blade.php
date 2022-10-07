@@ -1,30 +1,37 @@
 <x-app-layout>
-This is the test page
-    <section class="max-w-9xl my-8 mx-auto px-4 md:px-24 w-full md:my-10 ">
-        <div
-            class="flex flex-col items-center text-center bg-green-200 dark:bg-gray-900 rounded-3xl pt-8 pb-10 px-6 md:py-12 lg:py-14">
-            <div
-                class="flex items-center justify-center w-28 h-28 bg-gradient-to-br from-green-400 to-green-200 rounded-3xl text-gray-900 font-bold text-4xl sm:text-5xl">
-                <fontsninja-text id="fontsninja-text-62" class="fontsninja-family-1770">
-                    v1.0
-                </fontsninja-text>
+    <div class="flex items-center justify-center h-full">
+        <button class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700" onclick="toggleModal()">Show
+            Modal</button>
+    </div>
+
+    <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal">
+        <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity">
+                <div class="absolute inset-0 bg-gray-900 opacity-75" />
             </div>
-            <h2
-                class="mt-8 inline-block bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent text-3xl font-bold sm:mt-10 sm:text-4xl md:text-5xl md:leading-tight">
-                <fontsninja-text id="fontsninja-text-63" class="fontsninja-family-1770 leading-1">
-                    What’s New in <br />{{ config('app.name') }}</fontsninja-text>
-            </h2>
-            <p class="text-gray-600 dark:text-gray-400 mt-6 font-medium max-w-4xl sm:text-lg">
-                <fontsninja-text id="fontsninja-text-64" class="fontsninja-family-1770">
-                    {{ __('The 20th Anniversary celebration.') }}</fontsninja-text>
-            </p>
-            <a href="https://www.thenonstop.org"
-                class="mt-8 inline-block text-black border-b border-black dark:text-green-300 font-medium transition sm:mt-10 sm:text-lg hover:opacity-50 dark:hover:opacity-80">
-                <fontsninja-text id="fontsninja-text-65" class="fontsninja-family-1770">
-                    {{ __('Visit the Website for more details. ') }}
-                </fontsninja-text>
-            </a>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+            <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <label>Name</label>
+                    <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                    <label>Url</label>
+                    <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                </div>
+                <div class="bg-gray-200 px-4 py-3 text-right">
+                    <button type="button" class="py-0 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
+                        onclick="toggleModal()"><i class="fas fa-times"></i> Cancel</button>
+                    <button type="button" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i
+                            class="fas fa-plus"></i> Create</button>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <script>
+        function toggleModal() {
+            document.getElementById('modal').classList.toggle('hidden')
+        }
+    </script>
 
 </x-app-layout>

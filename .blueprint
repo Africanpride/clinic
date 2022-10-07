@@ -1,4 +1,56 @@
+created:
+    - app/Http/Controllers/PostController.php
+    - app/Http/Controllers/MinisterController.php
+    - app/Http/Controllers/ProfileController.php
+    - app/Http/Controllers/UserController.php
+    - app/Http/Controllers/EventController.php
+    - database/factories/MinisterFactory.php
+    - database/factories/EventFactory.php
+    - database/migrations/2022_10_05_124517_create_ministers_table.php
+    - database/migrations/2022_10_05_124518_create_events_table.php
+    - app/Models/Minister.php
+    - app/Models/Event.php
+    - tests/Feature/Http/Controllers/PostControllerTest.php
+    - tests/Feature/Http/Controllers/MinisterControllerTest.php
+    - tests/Feature/Http/Controllers/ProfileControllerTest.php
+    - tests/Feature/Http/Controllers/UserControllerTest.php
+    - tests/Feature/Http/Controllers/EventControllerTest.php
+    - app/Http/Requests/PostStoreRequest.php
+    - app/Http/Requests/PostUpdateRequest.php
+    - app/Http/Requests/MinisterStoreRequest.php
+    - app/Http/Requests/MinisterUpdateRequest.php
+    - app/Http/Requests/ProfileStoreRequest.php
+    - app/Http/Requests/ProfileUpdateRequest.php
+    - app/Http/Requests/UserStoreRequest.php
+    - app/Http/Requests/UserUpdateRequest.php
+    - app/Http/Requests/EventStoreRequest.php
+    - app/Http/Requests/EventUpdateRequest.php
+    - resources/views/post/index.blade.php
+    - resources/views/post/create.blade.php
+    - resources/views/post/show.blade.php
+    - resources/views/post/edit.blade.php
+    - resources/views/minister/index.blade.php
+    - resources/views/minister/create.blade.php
+    - resources/views/minister/show.blade.php
+    - resources/views/minister/edit.blade.php
+    - resources/views/profile/create.blade.php
+    - resources/views/profile/show.blade.php
+    - resources/views/profile/edit.blade.php
+    - resources/views/user/index.blade.php
+    - resources/views/user/create.blade.php
+    - resources/views/user/show.blade.php
+    - resources/views/user/edit.blade.php
+    - resources/views/event/index.blade.php
+    - resources/views/event/create.blade.php
+    - resources/views/event/show.blade.php
+    - resources/views/event/edit.blade.php
+updated:
+    - routes/web.php
+skipped:
+    - resources/views/profile/index.blade.php
 models:
     Post: {  }
     Profile: { telephone: string, profile_details: string, profile_image: string, last_login_at: datetime, last_login_ip: 'string:45', user_id: 'biginteger unsigned' }
     User: { firstname: string, lastname: string, isadmin: 'boolean default:0', email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    Minister: { id: id, timestamps: timestamps }
+    Event: { id: id, timestamps: timestamps }

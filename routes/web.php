@@ -28,6 +28,20 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('profile', ProfileController::class)->middleware(['auth','verified']);
-Route::resource('users', RegisteredUserController::class)->middleware(['auth','verified']);
+// Route::resource('users', RegisteredUserController::class)->middleware(['auth','verified']);
 
+Route::resource('posts', App\Http\Controllers\PostController::class);
+
+Route::resource('ministers', App\Http\Controllers\MinisterController::class);
+
+Route::resource('profiles', App\Http\Controllers\ProfileController::class);
+
+Route::resource('users', App\Http\Controllers\UserController::class)->middleware(['auth']);
+
+Route::resource('events', App\Http\Controllers\EventController::class);
 require __DIR__.'/auth.php';
+
+
+
+
+
