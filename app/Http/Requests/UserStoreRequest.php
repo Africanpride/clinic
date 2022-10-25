@@ -23,14 +23,13 @@ class UserStoreRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
-            'firstname' => ['required', 'string'],
-            'lastname' => ['required', 'string'],
-            'isadmin' => ['required'],
+            'firstName' => ['required', 'string'],
+            'lastName' => ['required', 'string'],
             'email' => ['required', 'email'],
-            'email_verified_at' => [''],
             'password' => ['required', 'password'],
-            'remember_token' => ['string', 'max:100'],
+
         ];
     }
 }

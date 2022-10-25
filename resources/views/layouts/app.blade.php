@@ -78,6 +78,7 @@
         style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;">
         Hero — Tailwind CSS Components</div>
 
+        @livewireScripts
 
 </body>
 

@@ -13,6 +13,18 @@
     </div>
     <div class="h-4"></div>
     <ul class="menu menu-compact flex flex-col p-0 px-4">
+        {{-- <li>
+
+            <a href="{{ route('admin.index') }}"
+            id=""
+            class="{{ (Request::segment(1) == 'admin' ? 'active' : '') }}  flex gap-4   ">
+                <span class="flex-none">
+                    <x-grommet-user-admin class="w-6 h-6 text-current" />
+                </span>
+                <span class="flex-1">Admin</span>
+            </a>
+
+        </li> --}}
         <li>
 
             <a href="{{ url('/dashboard') }}"
@@ -27,7 +39,7 @@
         </li>
 
         <li>
-            <a href="{{ url('/users') }}" id="" class="flex gap-4   ">
+            <a href="{{ url('/users') }}" id=""  class="{{ (Request::segment(1) == 'users' ? 'active' : '') }}  flex gap-4   ">
                 <span class="flex-none">
                     <x-heroicon-o-users class="w-6 h-6 text-current" />
                 </span>

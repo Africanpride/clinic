@@ -12,15 +12,20 @@
 
                 </a>
 
-                <h1 class="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-                    Welcome to <br /> "{{  config('app.fullname') }}"
+                <h1 class="mt-6 text-xl font-bold text-white sm:text-3xl md:text-4xl">
+                    Welcome to "{{  config('app.fullname') }}"
                 </h1>
 
-                <p class="mt-4 leading-relaxed text-white text-lg relative">
-                    This is the one activity we will not stop doing in Heaven as well as during the millennial reign of
-                    Christ on earth.
+                <blockquote class="relative my-5">
 
-                </p>
+
+                    <div class="relative z-10">
+                      <p class="text-gray-800 sm:text-xl text-3xl dark:text-yellow-500 my-5"><em>
+                        "This is the one activity we will not stop doing in Heaven as well as during the millennial reign of
+                        Christ on earth."                              </p></em>
+                    </div>
+                  </blockquote>
+
             </div>
             <div class="absolute inset-0 bg-gray-900 opacity-10"></div>
         </section>
@@ -41,8 +46,16 @@
                     </h1>
 
                     <p class="mt-4 leading-relaxed text-current text-lg relative mb-5">
-                        This is the one activity we will not stop doing in Heaven as well as during the millennial reign of
-                        Christ on earth.
+                        <blockquote class="relative">
+
+
+                            <div class="relative z-10">
+                              <p class="text-gray-800 sm:text-xl dark:text-gray-500 my-5"><em>
+                               " This is the one activity we will not stop doing in Heaven as well as during the millennial reign of
+                                Christ on earth."                              </p></em>
+                            </div>
+                          </blockquote>
+
 
                     </p>
                 </div>

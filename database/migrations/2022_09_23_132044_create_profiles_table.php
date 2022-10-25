@@ -15,13 +15,11 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('telephone');
-            $table->string('profile_details');
-            $table->string('profile_image');
-            $table->ipAddress('last_login_ip');
+            $table->string('telephone')->default('000-000-0000');
+            $table->string('profile_details')->nullable();
+            $table->string('profile_image')->nullable();
+            $table->ipAddress('last_login_ip')->nullable();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-
-
             $table->timestamps();
         });
     }

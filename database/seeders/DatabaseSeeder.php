@@ -21,19 +21,23 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PermissionsDemoSeeder::class);
 
-        $user = User::factory()->create([
-            'firstName' => 'Kwame',
-            'lastName' => 'Poku',
-            'isAdmin' => true,
-            'email' => 'johnwelsh19@gmail.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('123Ghana'), // password
-            'remember_token' => Str::random(10),
-        ])->assignRole('Super-Admin');
+        if(!User::where('email','johnwelsh19@gmail.com')->first()) {
+            $user = User::factory()->create([
+                'firstName' => 'Kwame',
+                'lastName' => 'Poku',
+                'isAdmin' => true,
+                'isActivated' => true,
+                'isApproved' => true,
+                'email' => 'johnwelsh19@gmail.com',
+                'email_verified_at' => now(),
+                'password' => Hash::make('123Ghana'), // password
+                'remember_token' => Str::random(10),
+            ])->assignRole('super-admin');
+            Profile::factory()->for($user)->create();
+        }
 
-        Profile::factory()->for($user)->create();
 
-        User::factory(5)->hasProfile()->create()->each(function ($user) {
+        User::factory(15)->hasProfile()->create()->each(function ($user) {
             $role = Role::findByName('writer');
             $user->assignRole($role);
         });

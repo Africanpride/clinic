@@ -6,12 +6,15 @@ namespace App\Models;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles, HasApiTokens;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, HasApiTokens, SoftDeletes;
+
 
     /**
      * The attributes that are mass assignable.
@@ -23,9 +26,14 @@ class User extends Authenticatable
         'lastName',
         'email',
         'password',
-        'last_login_at'
+        'last_login_at',
+        'isActivated',
+        'last_login_ip'
     ];
 
+    public function getFullNameAttribute() {
+        return ucfirst($this->firstName) . ' ' . ucfirst($this->lastName);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

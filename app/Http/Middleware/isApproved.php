@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class isAdmin
+class isApproved
 {
     /**
      * Handle an incoming request.
@@ -17,13 +17,10 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-
-        if(Auth::check() && Auth::user()->isAdmin == true) {
-
+        if (Auth::check() && Auth::user()->isApproved) {
             return $next($request);
         }
-
-        Auth()->logout();
-        return redirect('/login')->with('status', 'Security incidence logged. Administrator will be notified.');
+        auth()->logout();
+        return redirect('/login')->with('status', 'Please wait for account activation by Admin. You would be notified when Account Activation has been completed by the admin. ');
     }
 }
