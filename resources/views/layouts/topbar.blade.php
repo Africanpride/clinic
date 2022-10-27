@@ -24,14 +24,16 @@ backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-m
         <div class="flex-0 flex items-center gap-2">
 
 
-            {{ Auth::user()->firstName ?? 'Welcome!' }}
+           Hello! {{ Auth::user()->firstName ?? 'Welcome!' }}
+
+
 
             <div class="dropdown dropdown-end">
 
                 <label tabindex="0" class="btn btn-ghost btn-circle avatar {{ Auth::check() == true ? 'online' : 'offline' }}">
                     <div class="w-10 rounded-full ">
 
-                        <img src="https://placeimg.com/80/80/people">
+                        <img src="{{ Auth::user()?->profile->profile_image ?? asset('/images/avatar.png') }}">
                     </div>
                 </label>
 

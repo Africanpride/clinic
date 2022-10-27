@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug');
+            $table->longText('content');
+            $table->text('notes');
+            $table->string('image')->nullable();
+            $table->boolean('featured')->default(false);
+            $table->boolean('active')->default(false);
+            $table->foreignId('user_id')->default(1);
             $table->timestamps();
         });
     }

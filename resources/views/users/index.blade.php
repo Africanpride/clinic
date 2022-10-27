@@ -1,10 +1,4 @@
-@include('layouts.head')
-
-<body tabindex="-1">
-    <div class="bg-base-100 drawer drawer-mobile"><input id="drawer" type="checkbox" class="drawer-toggle">
-        <div class="drawer-content" style="scroll-behavior: smooth; scroll-padding-top: 5rem;">
-            @include('layouts.topbar')
-            <div class="p-6 pb-16">
+<x-app-layout>
                 <x-app-data />
                 <!-- component -->
 
@@ -93,7 +87,7 @@
                                                 </div>
                                                 <div class="ml-3">
                                                     <p class="text-gray-900 whitespace-no-wrap text-bold">
-                                                        {{ $user->firstName }} {{ $user->lastName }}
+                                                        {{ $user->full_name }}
                                                     </p>
                                                     <p class="text-gray-600 whitespace-no-wrap">
                                                         {{ $user->email }}</p>
@@ -213,19 +207,4 @@
                     </div>
                 </div>
 
-
-
-            </div>
-            @include('layouts.footer')
-        </div>
-        <div class="drawer-side" style="scroll-behavior: smooth; scroll-padding-top: 5rem;"><label for="drawer"
-                class="drawer-overlay"></label>
-
-            @include('layouts.navigation')
-
-        </div>
-    </div>
-
-</body>
-
-</html>
+            </x-app-layout>

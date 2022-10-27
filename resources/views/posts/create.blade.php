@@ -1,7 +1,3 @@
-{{--
-    @extends('layouts.app')
-
-    @section('content')
-        post.create template
-    @endsection
---}}
+<x-app-layout>
+CReate Post
+</x-app-layout>

@@ -5,7 +5,7 @@ module.exports = {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',,
+        './resources/views/**/*.blade.php', ,
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
 
     ],
@@ -19,10 +19,14 @@ module.exports = {
         rtl: false,
         prefix: "",
         darkTheme: "dark",
-      },
+    },
     // daisyui: {
     //     themes: [ "lofi", "light", "dark"],
     //   },
 
-    plugins: [require('@tailwindcss/forms'),require("daisyui")],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require("daisyui"),
+        require('@tailwindcss/line-clamp')
+    ],
 };

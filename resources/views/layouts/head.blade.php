@@ -11,7 +11,6 @@
 
     <title>{{ config('app.name', 'The Non-Stop Series') }}</title>
 
-
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -22,8 +21,10 @@
     <script type="module" src="/build/{$manifest['resources/js/app.js']['file']}"></script>
     <link rel="stylesheet" href="/build/{$manifest['resources/js/app.js']['css'][0]}">
      --}}
-    <script type="module" src="{{ asset('assets/app.ab93cf8a.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('build/assets/app.6db3c3b2.css') }}">
+    {{-- <script type="module" src="{{ asset('assets/app.ab93cf8a.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('build/assets/app.6db3c3b2.css') }}"> --}}
 
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
+
 </head>

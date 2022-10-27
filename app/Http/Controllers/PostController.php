@@ -15,9 +15,9 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Post::all();
+        $posts = Post::paginate(7);
 
-        return view('post.index', compact('posts'));
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
-        return view('post.create');
+        return view('posts.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class PostController extends Controller
      */
     public function show(Request $request, Post $post)
     {
-        return view('post.show', compact('post'));
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -59,7 +59,7 @@ class PostController extends Controller
      */
     public function edit(Request $request, Post $post)
     {
-        return view('post.edit', compact('post'));
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -73,7 +73,7 @@ class PostController extends Controller
 
         $request->session()->flash('post.id', $post->id);
 
-        return redirect()->route('post.index');
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -85,6 +85,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route('post.index');
+        return redirect()->route('posts.index');
     }
 }
